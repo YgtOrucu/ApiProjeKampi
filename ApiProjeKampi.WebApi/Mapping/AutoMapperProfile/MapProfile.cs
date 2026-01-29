@@ -2,6 +2,7 @@
 using ApiProjeKampi.WebApi.Dtos.MessageDtos;
 using ApiProjeKampi.WebApi.Dtos.ProductDtos;
 using ApiProjeKampi.WebApi.Dtos.ServiceDtos;
+using ApiProjeKampi.WebApi.Dtos.TestimonialDtos;
 using ApiProjeKampi.WebApi.Entities;
 using AutoMapper;
 
@@ -25,6 +26,11 @@ namespace ApiProjeKampi.WebApi.Mapping.AutoMapperProfile
             CreateMap<Service, CreateServiceDto>().ReverseMap();
             CreateMap<Service, GetByIdServiceDto>().ReverseMap();
             CreateMap<Service, UpdateServiceDto>().ReverseMap();
+
+            CreateMap<Testimonial, ResultTestimonialDto>().ReverseMap();
+            CreateMap<Testimonial, CreateTestimonialDto>().ReverseMap();
+            CreateMap<Testimonial, GetByIdTestimonialDto>().ReverseMap();
+            CreateMap<Testimonial, UpdateTestimonialDto>().ReverseMap();
 
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, ResultProductWithCategoryDto>().ReverseMap();
