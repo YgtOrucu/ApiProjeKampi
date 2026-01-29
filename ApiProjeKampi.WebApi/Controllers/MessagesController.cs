@@ -1,5 +1,6 @@
 ﻿using ApiProjeKampi.WebApi.Context;
 using ApiProjeKampi.WebApi.Dtos.MessageDtos;
+using ApiProjeKampi.WebApi.Dtos.MessageDtos.MessageDtosForAdminThema.MessageListForNavbarSection;
 using ApiProjeKampi.WebApi.Entities;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -54,6 +55,13 @@ namespace ApiProjeKampi.WebApi.Controllers
             _apiProjeContext.Messages.Update(values);
             _apiProjeContext.SaveChanges();
             return Ok("Güncelleme başarılı");
+        }
+
+        [HttpGet("MessageListByIsReadFalse")]
+        public IActionResult MessageListByIsReadFalse()
+        {
+            var values = _apiProjeContext.Messages.Where(x => !x.IsRead).ToList();
+            return Ok(_mapper.Map<List<MessageListByIsReadFalseDto>>(values));
         }
     }
 }

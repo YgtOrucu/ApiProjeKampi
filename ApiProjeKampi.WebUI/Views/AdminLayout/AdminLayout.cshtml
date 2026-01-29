@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("HeadForAdmin")
+<body>
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            @await Component.InvokeAsync("NavbarForAdmin")
+
+            @await Component.InvokeAsync("SidebarForAdmin")
+
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </section>
+                @await Component.InvokeAsync("SettingsSidebarForAdmin")
+            </div>
+
+            <footer class="main-footer">
+                <div class="footer-left">
+                    <a href="templateshub.net">Templateshub</a>
+                </div>
+                <div class="footer-right">
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="/otika-bootstrap-admin-template/assets/js/app.min.js"></script>
+    <script src="/otika-bootstrap-admin-template/assets/js/scripts.js"></script>
+    <script src="/otika-bootstrap-admin-template/assets/js/custom.js"></script>
+</body>
+</html>

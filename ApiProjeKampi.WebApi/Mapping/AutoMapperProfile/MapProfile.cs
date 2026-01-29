@@ -1,5 +1,8 @@
 ﻿using ApiProjeKampi.WebApi.Dtos.FeatureDtos;
 using ApiProjeKampi.WebApi.Dtos.MessageDtos;
+using ApiProjeKampi.WebApi.Dtos.MessageDtos.MessageDtosForAdminThema.MessageListForNavbarSection;
+using ApiProjeKampi.WebApi.Dtos.NotificationDtos;
+using ApiProjeKampi.WebApi.Dtos.NotificationDtos.NotificationDtosForAdminThema.NotificationListForNavbarSection;
 using ApiProjeKampi.WebApi.Dtos.ProductDtos;
 using ApiProjeKampi.WebApi.Dtos.ServiceDtos;
 using ApiProjeKampi.WebApi.Dtos.TestimonialDtos;
@@ -21,6 +24,13 @@ namespace ApiProjeKampi.WebApi.Mapping.AutoMapperProfile
             CreateMap<Message, CreateMessageDto>().ReverseMap();
             CreateMap<Message, GetByIdMessageDto>().ReverseMap();
             CreateMap<Message, UpdateMessageDto>().ReverseMap();
+            CreateMap<Message, MessageListByIsReadFalseDto>().ReverseMap();
+
+            CreateMap<Notification, ResultNotificationDto>().ReverseMap();
+            CreateMap<Notification, CreateNotificationDto>().ReverseMap();
+            CreateMap<Notification, GetByIdNotificationDto>().ReverseMap();
+            CreateMap<Notification, UpdateNotificationDto>().ReverseMap();
+            CreateMap<Notification, NotificationList>().ReverseMap();
 
             CreateMap<Service, ResultServiceDto>().ReverseMap();
             CreateMap<Service, CreateServiceDto>().ReverseMap();
