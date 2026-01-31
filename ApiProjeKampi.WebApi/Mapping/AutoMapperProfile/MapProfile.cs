@@ -1,4 +1,5 @@
-﻿using ApiProjeKampi.WebApi.Dtos.FeatureDtos;
+﻿using ApiProjeKampi.WebApi.Dtos.CategoryDtos;
+using ApiProjeKampi.WebApi.Dtos.FeatureDtos;
 using ApiProjeKampi.WebApi.Dtos.MessageDtos;
 using ApiProjeKampi.WebApi.Dtos.MessageDtos.MessageDtosForAdminThema.MessageListForNavbarSection;
 using ApiProjeKampi.WebApi.Dtos.NotificationDtos;
@@ -44,6 +45,10 @@ namespace ApiProjeKampi.WebApi.Mapping.AutoMapperProfile
 
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, ResultProductWithCategoryDto>().ReverseMap();
+            CreateMap<Product, UpdateProductWithCategoryDto>().ReverseMap();
+
+            CreateMap<Category, CreateCategoryDto>().ReverseMap();
+            CreateMap<Category, UpdateCategoryDto>().ReverseMap();
         }
     }
 }

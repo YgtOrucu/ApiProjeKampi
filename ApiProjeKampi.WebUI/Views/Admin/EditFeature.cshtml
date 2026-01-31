@@ -1,0 +1,41 @@
+﻿@model GetByIdFeatureDto
+
+@{
+    ViewData["Title"] = "EditFeature";
+    Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+<div class="col-12 col-md-12 col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="section-title">Güncelleme İşlemi</div>
+            <div class="table-responsive">
+                <form asp-controller="Admin" asp-action="UpdateFeature" method="post">
+                    <input type="hidden" asp-for="FeatureId" />
+                    <label asp-for="Title">Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" />
+                    <br />
+                    <label asp-for="SubTitle">AltBaşlık</label>
+                    <input type="text" class="form-control" asp-for="SubTitle" />
+                    <br />
+                    <label asp-for="Description">Açıklama</label>
+                    <input type="text" class="form-control" asp-for="Description" />
+                    <br />
+                    <label asp-for="VideoUrl">VideoUrl</label>
+                    <input type="text" class="form-control" asp-for="VideoUrl" />
+                    <br />
+                    <label asp-for="ImageUrl">ImageUrl</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl" />
+                    <br />
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                    <a asp-controller="Admin" asp-action="FeatureList" class="btn btn-danger">Geri</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

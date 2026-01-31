@@ -8,7 +8,19 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
-                <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                <a asp-controller="Default" asp-action="Index" class="nav-link"><i data-feather="log-in"></i><span>Siteye Git</span></a>
+            </li>
+            <li class="dropdown">
+                <a asp-controller="Admin" asp-action="Dashboard" class="nav-link"><i data-feather="monitor"></i><span>Panel</span></a>
+            </li>
+            <li class="dropdown">
+                <a asp-controller="Admin" asp-action="CategoryList" class="nav-link"><i data-feather="clipboard"></i><span>Kategoriler</span></a>
+            </li>
+            <li class="dropdown">
+                <a asp-controller="Admin" asp-action="ProductList" class="nav-link"><i data-feather="package"></i><span>Ürünler</span></a>
+            </li>
+            <li class="dropdown">
+                <a asp-controller="Admin" asp-action="FeatureList" class="nav-link"><i data-feather="package"></i><span>Özellikler</span></a>
             </li>
         </ul>
     </aside>

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -24,14 +23,7 @@
                 </section>
                 @await Component.InvokeAsync("SettingsSidebarForAdmin")
             </div>
-
-            <footer class="main-footer">
-                <div class="footer-left">
-                    <a href="templateshub.net">Templateshub</a>
-                </div>
-                <div class="footer-right">
-                </div>
-            </footer>
+            @await Component.InvokeAsync("FooterForAdmin")
         </div>
     </div>
     <script src="/otika-bootstrap-admin-template/assets/js/app.min.js"></script>

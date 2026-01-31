@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ResultCategoryDto>
 @{
     ViewData["Title"] = "CategoryList";
     Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
@@ -7,38 +7,28 @@
 <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
         <div class="card-body">
-            <div class="section-title">Responsive</div>
+            <div class="section-title">Kategoriler</div>
             <div class="table-responsive">
                 <table class="table table-sm">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Adı</th>
+                            <th scope="col">Sil</th>
+                            <th scope="col">Güncele</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>twitter</td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td><a asp-controller="Admin" asp-action="DeleteCategory" asp-route-id="@item.CategoryId" class="btn btn-danger btn-sm">Sil</a></td>
+                                <td><a asp-controller="Admin" asp-action="EditCategory" asp-route-id="@item.CategoryId" class="btn btn-success btn-sm">Güncelle</a></td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
+                <a asp-controller="Admin" asp-action="CreateCategory" class="btn btn-primary btn-sm">Ekle</a>
             </div>
         </div>
     </div>

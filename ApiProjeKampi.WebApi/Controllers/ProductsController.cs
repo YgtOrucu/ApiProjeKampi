@@ -67,6 +67,16 @@ namespace ApiProjeKampi.WebApi.Controllers
             return Ok("Güncelleme başarılı");
         }
 
+        [HttpPut("UpdateProductWithCategory")]
+        public IActionResult UpdateProductWithCategory(UpdateProductWithCategoryDto updateProductWithCategoryDto)
+        {
+            var product = _mapper.Map<Product>(updateProductWithCategoryDto);
+            _apiProjeContext.Products.Update(product);
+            _apiProjeContext.SaveChanges();
+            return Ok("Güncelleme Başarılı");
+        }
+
+
         [HttpPost("CreateProductWithCategory")]
         public IActionResult CreateProductWithCategory(CreateProductDto createProductDto)
         {
